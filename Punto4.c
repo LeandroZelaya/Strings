@@ -6,9 +6,17 @@ int i,n;
 
 main(){
 	printf("ingresar la cadena: ");
-	scanf("%s",&str);
-	printf("elegir la letra a remplazar");
+	fgets(str,sizeof(str),stdin);
+	printf("elegir la letra a remplazar: ");
 	scanf("%s",&lRep);
-	printf("elegir la letra");
+	printf("elegir la nueva letra: ");
 	scanf("%s",&lIng);	
+	n=strlen(str);
+	for(i=0; i<n;i++){
+	if (str[i] == lRep){
+		str[i]= lIng;
+	}
+	}
+	
+	printf("%s",str);
 }

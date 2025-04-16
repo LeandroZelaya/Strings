@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-char str[30];
+char str[100];
 int contador,i,n;
 
 main(){
 	printf("ingresar la cadena: ");
-	scanf("%s",&str);
+	fgets(str,sizeof(str),stdin);
+	str[strcspn(str, "\n")] = '\0';
 	n=strlen(str);
 	for(i =0 ; i<n;i++){
 		if(str[i]=='a' ||str[i]=='e' ||str[i]=='i' ||str[i]=='o' ||str[i]=='u' ||

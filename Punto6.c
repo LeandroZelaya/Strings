@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char str[30];
+char str[100];
 int i,n,j,cont=0,palabras;
 
 main(){

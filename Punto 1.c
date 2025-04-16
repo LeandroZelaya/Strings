@@ -4,7 +4,8 @@
 char nombre[25];
 main(){
 	printf("Ingrese su nombre: ");
-	scanf("%s",&nombre);
+	fgets(nombre,sizeof(nombre),stdin);
+	nombre[strcspn(nombre, "\n")] = '\0';	
 	
 	printf("Su nombre es: %s",nombre);
 }

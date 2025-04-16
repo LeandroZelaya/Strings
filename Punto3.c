@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-char str[10],inver[10];
+char str[100],inver[100];
 int i,posFin;
 
 main(){
 	printf("ingresar la cadena: ");
-	scanf("%s",&str);
+	fgets(str,sizeof(str),stdin);
+	str[strcspn(str, "\n")] = '\0';	
 	posFin=strlen(str);
 	for(i =0 ; i<posFin;i++){
 		inver[i]=str[posFin-i-1];

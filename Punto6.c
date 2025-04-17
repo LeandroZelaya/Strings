@@ -1,38 +1,24 @@
-#include <stdio.h>
-#include <string.h>
-
-char str[100];
-int i,n,j,cont=0,palabras;
-
-main(){
-	printf("ingresar la cadena: ");
-	fgets(str,sizeof(str),stdin);
-	str[strcspn(str,"\n")] ='\0';
-	n=strlen(str);
-	for(i=0; i<n;i++){
-	if (str[i] == ' '){
-		palabras++;
-
-	}}
-	for(i=0; i<n;i++){
-		for(j=0; j<n;j++){
-		if (str[j] == ' '){
-			cont++;
-
-	}			
-		if(cont==palabras){
-			if(palabras==1){
-			printf("%c",str[j]);
-				
-			}
-			else{
-				printf("%c",str[j+1]);
-			}
-		}	
+	#include <stdio.h>
+	#include <string.h>
+	
+	char str[100], *tok, *palabras[30];
+	int i,n,j,cont=0;
+	
+	main(){
+		printf("ingresar la cadena: ");
+		fgets(str,sizeof(str),stdin);
+		str[strcspn(str,"\n")] ='\0';
 		
-			
-	 		}}
-	 		palabras--;
-	 		cont=1;
-		
-}
+		tok = strtok(str, " ");
+		while(tok!=NULL){
+			palabras[cont++] = tok;
+			tok = strtok(NULL, " "); 
+		} 
+		printf("\nla cadena con el orden de las palabras invertido es:\n");
+		for(i = cont-1; i>=0; i--){
+			printf("%s",palabras[i]);
+			if (i > 0) {
+			printf(" "); 	
+			}
+		}
+	}

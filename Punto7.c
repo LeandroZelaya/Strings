@@ -23,6 +23,6 @@ main(){
 		printf("es anagrama");
 	}
 	else{
-		printf("no es");
+		printf("no es anagrama");
 	}
 }
